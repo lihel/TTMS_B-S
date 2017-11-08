@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="TTMS">
+    <output-path>$PROJECT_DIR$/out/artifacts/TTMS</output-path>
+    <root id="archive" name="TTMS.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="TTMS" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="TTMS/web/Web" />
+    </root>
+  </artifact>
+</component>

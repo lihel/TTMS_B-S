@@ -21,7 +21,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
     <orderEntry type="module-library" exported="">
+=======
+    <orderEntry type="module-library">
+>>>>>>> e3a2b447b82071c396751746e4a3a0d364105024
       <library>
         <CLASSES>
           <root url="jar://$USER_HOME$/Tomcat/Home/lib/servlet-api.jar!/" />
