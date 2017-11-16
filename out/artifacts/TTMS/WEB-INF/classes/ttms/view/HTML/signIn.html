@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sign in</title>
+    <link rel="stylesheet" href="../CSS/bs.css">
+    <link rel="stylesheet" href="../CSS/index.css">
+
+</head>
+<body>
+
+<div class="container">
+    <div class="panel panel-primary sign">
+
+        <h3 class="text-center">欢迎登陆TTMS</h3>
+
+        <form action="studio.html" onsubmit="return　checkUser()">
+
+            <div class="text-center">
+                用户名：<input type="text" id="user" required="required"/>
+            </div>
+
+            <div class="text-center pass">
+                密　码：<input type="password" id="password" required="required"/>
+            </div>
+            <div class="text-center signbutt">
+                <button type="submit" class="btn btn-primary btn-block">登陆</button>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+<script type="text/javascript" src="../JS/check.js"></script>
+
+</body>
+</html>
