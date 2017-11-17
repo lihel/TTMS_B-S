@@ -73,7 +73,7 @@
     </filter>
     <filter-mapping>
         <filter-name>FilterA</filter-name>
-        <url-pattern>/Login/</url-pattern>
+        <url-pattern>/Login/*</url-pattern>
     </filter-mapping>
 
     <filter>
@@ -82,6 +82,6 @@
     </filter>
     <filter-mapping>
         <filter-name>FilterB</filter-name>
-        <url-pattern>/Login/</url-pattern>
+        <url-pattern>/Login/*</url-pattern>
     </filter-mapping>
 </web-app>

@@ -24,7 +24,7 @@ public class Login extends HttpServlet
         // request.getSession().setAttribute("login", null);
         // request.getSession().setAttribute("a", null);
         // request.getSession().setAttribute("b", null);
-        // request.getSession().invalidate();
+        request.getSession().invalidate();
         String name = request.getParameter("name");
         String pass = request.getParameter("pass");
         String result = "用户名、密码错误!";
