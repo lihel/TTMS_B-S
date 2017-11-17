@@ -37,4 +37,51 @@
         <error-code>500</error-code>
         <location>/error.jsp</location>
     </error-page>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+
+    <filter>
+        <filter-name>setCharacterEncodingFilter</filter-name>
+        <filter-class>ttms.filters.CharsetAllEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+
+    </filter>
+
+    <filter-mapping>
+        <filter-name>setCharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>FilterA</filter-name>
+        <filter-class>ttms.filters.FilterA</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>FilterA</filter-name>
+        <url-pattern>/Login/</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>FilterB</filter-name>
+        <filter-class>ttms.filters.FilterB</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>FilterB</filter-name>
+        <url-pattern>/Login/</url-pattern>
+    </filter-mapping>
 </web-app>
