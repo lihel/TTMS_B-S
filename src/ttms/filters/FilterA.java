@@ -28,14 +28,18 @@ public class FilterA implements Filter
         System.out.println("进入过滤器FilterA");
         HttpServletRequest req = (HttpServletRequest) request;
         String flag = (String) req.getSession().getAttribute("a");
+        System.out.println(flag);
         if (flag == null || !flag.equals("ok"))
         {
             System.out.println("无权访问a路径");
             request.setAttribute("desc", "无权访问a路径");
             request.getRequestDispatcher("/error.jsp").forward(request, response);
         }
-        else
+        else{
+//            System.out.println("jinrujinrur");
             chain.doFilter(request, response);
+
+        }
     }
 
     public void init(FilterConfig fConfig) throws ServletException

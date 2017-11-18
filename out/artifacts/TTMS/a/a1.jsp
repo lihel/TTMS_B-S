@@ -1,4 +1,4 @@
-<%@ page pageEncoding="UTF-8" isErrorPage="true" errorPage="error.jsp"%>
+<%@ page pageEncoding="UTF-8" isErrorPage="true" errorPage="/error.jsp"%>
 <html>
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
