@@ -20,32 +20,38 @@ public class Login extends HttpServlet {
         // TODO:一个账号登陆后，另一个账户登录，会访问前一个账户的内容，所以登陆后需要清除原session
         request.getSession().setAttribute("login", null);
         request.getSession().setAttribute("a", null);
-        request.getSession().setAttribute("b", null);
+        request.getSession().setAttribute("m", null);
+        request.getSession().setAttribute("s", null);
         request.getSession().invalidate();
         String name = request.getParameter("name");
         String pass = request.getParameter("pass");
         System.out.println(name);
         System.out.println(pass);
-        String result = "用户名、密码错误!";
+        String result = "用户名或密码错误!";
         String page = "login.jsp";
-        if (name == null || pass == null) {
+        if (name.equals("") || pass.equals("")) {
+            result = "用户名或密码不能为空";
             request.setAttribute("desc", result);
-        } else if (name.equals("aaa") && pass.equals("aaa")) {
+        } else if (name.equals("admin") && pass.equals("111")) {
             request.setAttribute("name", name);
             request.getSession().setAttribute("login", "ok");
             request.getSession().setAttribute("a", "ok");
-            System.out.println("用户名sadad");
             page = "dir.jsp";
 
-        } else if (name.equals("bbb") && pass.equals("bbb")) {
+        } else if (name.equals("manager") && pass.equals("222")) {
             request.setAttribute("name", name);
             request.getSession().setAttribute("login", "ok");
-            request.getSession().setAttribute("b", "ok");
+            request.getSession().setAttribute("m", "ok");
             page = "dir.jsp";
-        } else {
-            System.out.println("errorInfo");
+        }
+        else if (name.equals("seller") && pass.equals("333")) {
+            request.setAttribute("name", name);
+            request.getSession().setAttribute("login", "ok");
+            request.getSession().setAttribute("s", "ok");
+            page = "dir.jsp";
+        }
+        else {
             request.setAttribute("desc", result);
-            System.out.println("errorInfo");
         }
         request.getRequestDispatcher(page).forward(request, response);
     }
