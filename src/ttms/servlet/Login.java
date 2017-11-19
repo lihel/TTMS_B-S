@@ -1,12 +1,16 @@
 package ttms.servlet;
 
 import java.io.IOException;
-
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.*;
+
+import ttms.model.User;
+import ttms.service.UserSrv;
 
 @WebServlet("/Login")
 public class Login extends HttpServlet {
@@ -29,10 +33,37 @@ public class Login extends HttpServlet {
 //        System.out.println(pass);
         String result = "用户名或密码错误!";
         String page = "login.jsp";
+        UserSrv userSrv = new UserSrv();
+        User user = userSrv.findUserByNo(name).get(0);
+/*
+        List userList = new ArrayList<User>();
+        userList = userSrv.findUserByNo(name);
+
+        System.out.println(userList);
+
+        int size = userList.size();
+        for (int i = 0; i < size; i++) {
+            //从list获取数据可以通过get方法
+            System.out.println(i + "-----------" + userList.get(i));
+        }*/
+
         if (name.equals("") || pass.equals("")) {
             result = "用户名或密码不能为空";
             request.setAttribute("desc", result);
-        } else if (name.equals("admin") && pass.equals("111")) {
+        } else if (user.getEmp_type()==1) {
+            request.setAttribute("name", name);
+            request.getSession().setAttribute("login", "ok");
+            request.getSession().setAttribute("a", "ok");
+            page = "user.jsp";
+        }
+        else if (user.getEmp_type()==0) {
+            request.setAttribute("name", name);
+            request.getSession().setAttribute("login", "ok");
+            request.getSession().setAttribute("m", "ok");
+            page = "studio.jsp";
+        }
+
+        /*else if (name.equals("admin") && pass.equals("111")) {
             request.setAttribute("name", name);
             request.getSession().setAttribute("login", "ok");
             request.getSession().setAttribute("a", "ok");
@@ -49,7 +80,7 @@ public class Login extends HttpServlet {
             request.getSession().setAttribute("login", "ok");
             request.getSession().setAttribute("s", "ok");
             page = "studio.jsp";
-        }
+        }*/
         else {
             request.setAttribute("desc", result);
         }

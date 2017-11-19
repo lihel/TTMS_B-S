@@ -68,7 +68,6 @@ public class EmployeeDAO implements IEmployee {
             pstmt.setInt(1, employeeId);
             pstmt.executeUpdate();
             ConnectionManager.close(null, pstmt, con);
-
             result = true;
         } catch (Exception e) {
             e.printStackTrace();

@@ -9,7 +9,6 @@ import ttms.model.Employee;
 
 /**
  * 定义对用户表的增删改查接口
- * @author 张荣
  */
 public interface IEmployee
 {

@@ -17,8 +17,7 @@ public class User {
         this.emp_no = emp_no;
     }
     public String getEmp_pass()
-    {
-        return emp_pass;
+    {return emp_pass;
     }
 
     public void setEmp_pass(String emp_pass)
@@ -31,7 +30,7 @@ public class User {
         return type;
     }
 
-    public void setEmp_type(int emp_id)
+    public void setEmp_type(int type)
     {
         this.type = type;
     }
