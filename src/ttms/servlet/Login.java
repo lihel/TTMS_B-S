@@ -36,7 +36,7 @@ public class Login extends HttpServlet {
             request.setAttribute("name", name);
             request.getSession().setAttribute("login", "ok");
             request.getSession().setAttribute("a", "ok");
-            page = "studio.jsp";
+            page = "user.jsp";
 
         } else if (name.equals("manager") && pass.equals("222")) {
             request.setAttribute("name", name);
