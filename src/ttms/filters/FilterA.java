@@ -36,9 +36,7 @@ public class FilterA implements Filter
             request.getRequestDispatcher("/error.jsp").forward(request, response);
         }
         else{
-//            System.out.println("jinrujinrur");
             chain.doFilter(request, response);
-
         }
     }
 

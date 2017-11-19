@@ -5,6 +5,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 %>
 <html>
   <head>
+    <title>TTMS</title>
     <base href="<%=basePath%>">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="pragma" content="no-cache">
@@ -12,18 +13,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta http-equiv="expires" content="0">
     <link rel="stylesheet" href="view/CSS/bs.css">
     <link rel="stylesheet" href="view/CSS/index.css">
-    <%--<style type="text/css">
-	    body {font-size:24pt}
-	    input {font-size:24pt}
-    </style>--%>
+
   </head>
   <body>
-   <%-- <div>用户登陆</div>
-    <form action="Login" method="post">
-    user:<input type="text" name="name"/><br/>
-    pass:<input type="password" name="pass"><br/>
-    <input type="submit" value="提交" style="font-size:24pt"/>
-    </form>--%>
+  
     <div class="container">
       <div class="panel panel-primary sign">
 

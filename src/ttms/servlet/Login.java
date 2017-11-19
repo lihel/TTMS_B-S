@@ -25,8 +25,8 @@ public class Login extends HttpServlet {
         request.getSession().invalidate();
         String name = request.getParameter("name");
         String pass = request.getParameter("pass");
-        System.out.println(name);
-        System.out.println(pass);
+//        System.out.println(name);
+//        System.out.println(pass);
         String result = "用户名或密码错误!";
         String page = "login.jsp";
         if (name.equals("") || pass.equals("")) {
@@ -36,19 +36,19 @@ public class Login extends HttpServlet {
             request.setAttribute("name", name);
             request.getSession().setAttribute("login", "ok");
             request.getSession().setAttribute("a", "ok");
-            page = "dir.jsp";
+            page = "studio.jsp";
 
         } else if (name.equals("manager") && pass.equals("222")) {
             request.setAttribute("name", name);
             request.getSession().setAttribute("login", "ok");
             request.getSession().setAttribute("m", "ok");
-            page = "dir.jsp";
+            page = "studio.jsp";
         }
         else if (name.equals("seller") && pass.equals("333")) {
             request.setAttribute("name", name);
             request.getSession().setAttribute("login", "ok");
             request.getSession().setAttribute("s", "ok");
-            page = "dir.jsp";
+            page = "studio.jsp";
         }
         else {
             request.setAttribute("desc", result);

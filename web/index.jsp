@@ -42,5 +42,6 @@ finally
     ConnectionManager.close(rs, pstmt, con);
 }
 %>
+<h1>首页</h1>
 </body>
 </html>
