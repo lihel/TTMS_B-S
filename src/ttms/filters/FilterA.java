@@ -31,8 +31,8 @@ public class FilterA implements Filter
         System.out.println(flag);
         if (flag == null || !flag.equals("ok"))
         {
-            System.out.println("无权访问a路径");
-            request.setAttribute("desc", "无权访问a路径");
+            System.out.println("无权访问用户管理");
+            request.setAttribute("desc", "无权访问用户管理");
             request.getRequestDispatcher("/error.jsp").forward(request, response);
         }
         else{

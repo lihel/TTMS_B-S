@@ -50,12 +50,12 @@ public class Login extends HttpServlet {
         if (name.equals("") || pass.equals("")) {
             result = "用户名或密码不能为空";
             request.setAttribute("desc", result);
-        } else if (user.getEmp_type() == 1 && user.getEmp_no() == name && user.getEmp_pass() == pass) {
+        } else if (user.getEmp_type() == 1 && user.getEmp_no().equals(name) && user.getEmp_pass().equals(pass)) {
             request.setAttribute("name", name);
             request.getSession().setAttribute("login", "ok");
             request.getSession().setAttribute("a", "ok");
             page = "user.jsp";
-        } else if (user.getEmp_type() == 0 && user.getEmp_no() == name && user.getEmp_pass() == pass) {
+        } else if (user.getEmp_type() == 0 && user.getEmp_no().equals(name) && user.getEmp_pass().equals(pass)) {
             request.setAttribute("name", name);
             request.getSession().setAttribute("login", "ok");
             request.getSession().setAttribute("m", "ok");
