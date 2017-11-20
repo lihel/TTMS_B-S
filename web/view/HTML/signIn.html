@@ -7,7 +7,39 @@
     <link rel="stylesheet" href="../CSS/index.css">
 </head>
 <body>
+<script>
+    var req;
+    function getResult() {
+        var url = "Login";       //test.jsp
+        if (window.XMLHttpRequest) {
+            req = new XMLHttpRequest();
+        }
+        else if (window.ActiveXObject) {
+            req = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        if (req) {
+            req.open("POST", url, true);
+            req.onreadystatechange = complete;//设置回调方法
+            req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            req.send("user=aa&pass=bb");   //post方法发送  }
+        }
+    }
+    //回调函数
+    function complete()
+    {
+        if (req.readyState == 4 && req.status == 200)
+        {
+            //给返回的json串加上圆括号，转变成json对象:说明eval函数
+            var json =  eval("(" + req.responseText + ")");
+            document.getElementById("emp_no").innerText="编号:" + json.emp_no;
+            document.getElementById("emp_name").innerText="姓名:" + json.emp_name;
+            document.getElementById("emp_tel_num").innerText="电话:" + json.emp_tel_num;
+            document.getElementById("emp_addr").innerText="地址:" + json.emp_addr;
+            document.getElementById("emp_email").innerText="邮箱:" + json.emp_email;
+        }
+    }
 
+</script>
 <div class="container">
     <div class="panel panel-primary sign">
 
