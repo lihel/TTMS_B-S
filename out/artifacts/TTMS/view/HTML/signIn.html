@@ -33,9 +33,9 @@
 
 <!--<script type="text/javascript" src="../JS/check.js"></script>-->
 <script>
-    var req;
     function login() {
         let url = "Login";
+        let req = new XMLHttpRequest();
         if (window.XMLHttpRequest) {
             req = new XMLHttpRequest();
         }
@@ -45,44 +45,33 @@
 
         let userNo = document.getElementById("userNo").value;
         let pass = document.getElementById("password").value;
-        let error = document.getElementById("errorLogin").value;
+        let loginError = document.getElementById("errorLogin").value;
         if (userNo == "" || pass == "") {
-            error.innerHTML = "请输入用户名和密码";
+            loginError.innerHTML = "请输入用户名和密码";
             return false;
         } else {
-            error.innerText = "";
-            xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    json = JSON.parse(xmlhttp.responseText);
+            loginError.innerText = "";
+        }
+        if (req) {
+            req.open("post", url);
+            //POST方式，必须加入如下头信息设定
+            req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            req.onreadystatechange = () => {
+                if (req.readyState == 4 && req.status == 200) {
+                    console.log("hdfusdifhisaudfh");
+                    var json = eval("(" + req.responseText + ")");
+                    //json = JSON.parse(xmlhttp.responseText);
                     if (json.state == false) {
-                        error.innerText = json.info;
+                        loginError.innerText = json.info;
                     } else {
                         window.location.href = json.href;
                     }
+                    console.log(json);
                 }
             };
-            if (req) {
-                req.open("post", url);
-                //POST方式，必须加入如下头信息设定
-                req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                req.onreadystatechange = () => {
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        var json = eval("(" + req.responseText + ")");
-                        if (json.state == false) {
-                            error.innerText = json.info;
-                        } else {
-                            window.location.href = json.href;
-                        }
-                    }
-                };
-                req.send("name=" + userNo + "&password=" + pass + "&url=" + url);
-            }
-            xmlhttp.open('POST', url);
-            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xmlhttp.send("userNo=" + userNo + "&password=" + pass + "&url=" + url);
+            req.send("name=" + userNo + "&password=" + pass + "&url=" + url);
         }
-        console.log(json);
+
     }
 
 </script>

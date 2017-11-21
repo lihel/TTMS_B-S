@@ -1,7 +1,9 @@
 package ttms.servlet;
 
+import java.io.PrintWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.lang.String;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.*;
 
+import com.google.gson.JsonObject;
 import ttms.model.User;
 import ttms.service.UserSrv;
 
@@ -35,6 +38,7 @@ public class Login extends HttpServlet {
         String page = "login.jsp";
         UserSrv userSrv = new UserSrv();
         User user = userSrv.findUserByNo(name).get(0);
+
 /*
         List userList = new ArrayList<User>();
         userList = userSrv.findUserByNo(name);
@@ -46,6 +50,8 @@ public class Login extends HttpServlet {
             //从list获取数据可以通过get方法
             System.out.println(i + "-----------" + userList.get(i));
         }*/
+        response.setCharacterEncoding("UTF-8");
+        JsonObject jsobjcet = new JsonObject();
 
         if (name.equals("") || pass.equals("")) {
             result = "用户名或密码不能为空";
@@ -53,37 +59,25 @@ public class Login extends HttpServlet {
         } else if (user.getEmp_type() == 1 && user.getEmp_no().equals(name) && user.getEmp_pass().equals(pass)) {
             request.setAttribute("name", name);
             request.getSession().setAttribute("login", "ok");
-            request.getSession().setAttribute("a", "ok");
+            request.getSession().setAttribute("admin", "ok");
+            jsobjcet.addProperty("name", name);
+            jsobjcet.addProperty("pass", pass);
+            jsobjcet.addProperty("href", "/view/HTML/studio.html");
             page = "user.jsp";
         } else if (user.getEmp_type() == 0 && user.getEmp_no().equals(name) && user.getEmp_pass().equals(pass)) {
             request.setAttribute("name", name);
             request.getSession().setAttribute("login", "ok");
-            request.getSession().setAttribute("m", "ok");
+            request.getSession().setAttribute("manager", "ok");
             page = "studio.jsp";
-        }
-
-        /*else if (name.equals("admin") && pass.equals("111")) {
-            request.setAttribute("name", name);
-            request.getSession().setAttribute("login", "ok");
-            request.getSession().setAttribute("a", "ok");
-            page = "user.jsp";
-
-        } else if (name.equals("manager") && pass.equals("222")) {
-            request.setAttribute("name", name);
-            request.getSession().setAttribute("login", "ok");
-            request.getSession().setAttribute("m", "ok");
-            page = "studio.jsp";
-        }
-        else if (name.equals("seller") && pass.equals("333")) {
-            request.setAttribute("name", name);
-            request.getSession().setAttribute("login", "ok");
-            request.getSession().setAttribute("s", "ok");
-            page = "studio.jsp";
-        }*/
-        else {
+        } else {
             request.setAttribute("desc", result);
         }
         request.getRequestDispatcher(page).forward(request, response);
+
+        PrintWriter out = response.getWriter();
+        //out.write(jsobjcet.toString());
+        System.out.println(jsobjcet.toString());
+        out.close();
     }
 
 }
