@@ -27,7 +27,7 @@ public class FilterA implements Filter
     {
         System.out.println("进入过滤器FilterA");
         HttpServletRequest req = (HttpServletRequest) request;
-        String flag = (String) req.getSession().getAttribute("a");
+        String flag = (String) req.getSession().getAttribute("admin");
         System.out.println(flag);
         if (flag == null || !flag.equals("ok"))
         {

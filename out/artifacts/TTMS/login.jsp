@@ -38,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
       </div>
       <br/>
-      <div style="color:red">${desc}</div>
+      <div style="color:red" id="errorLogin">${desc}</div>
     </div>
   </body>
 </html>

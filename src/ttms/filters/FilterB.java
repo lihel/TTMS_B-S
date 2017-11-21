@@ -27,7 +27,7 @@ public class FilterB implements Filter
     {
         System.out.println("进入过滤器FilterB");
         HttpServletRequest req = (HttpServletRequest) request;
-        String flag = (String) req.getSession().getAttribute("b");
+        String flag = (String) req.getSession().getAttribute("manager");
         if (flag == null || !flag.equals("ok"))
         {
             System.out.println("无权访问b路径");
