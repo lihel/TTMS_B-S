@@ -35,7 +35,7 @@ public class Login extends HttpServlet {
 //        System.out.println(name);
 //        System.out.println(pass);
         String result = "用户名或密码错误!";
-        String page = "login.jsp";
+        String page = "index.jsp";
         UserSrv userSrv = new UserSrv();
         User user = userSrv.findUserByNo(name).get(0);
 
@@ -55,14 +55,17 @@ public class Login extends HttpServlet {
 
         if (name.equals("") || pass.equals("")) {
             result = "用户名或密码不能为空";
-            request.setAttribute("desc", result);
+          //  request.setAttribute("desc", result);
+            jsobjcet.addProperty("info", result);
+            jsobjcet.addProperty("state", false);
         } else if (user.getEmp_type() == 1 && user.getEmp_no().equals(name) && user.getEmp_pass().equals(pass)) {
             request.setAttribute("name", name);
             request.getSession().setAttribute("login", "ok");
             request.getSession().setAttribute("admin", "ok");
             jsobjcet.addProperty("name", name);
             jsobjcet.addProperty("pass", pass);
-            jsobjcet.addProperty("href", "/view/HTML/studio.html");
+            jsobjcet.addProperty("state", true);
+            jsobjcet.addProperty("href", "localhost:8000/TTMS/view/HTML/studio.html");
             page = "user.jsp";
         } else if (user.getEmp_type() == 0 && user.getEmp_no().equals(name) && user.getEmp_pass().equals(pass)) {
             request.setAttribute("name", name);
@@ -72,9 +75,9 @@ public class Login extends HttpServlet {
         } else {
             request.setAttribute("desc", result);
         }
-        request.getRequestDispatcher(page).forward(request, response);
 
         PrintWriter out = response.getWriter();
+        request.getRequestDispatcher(page).forward(request, response);
         //out.write(jsobjcet.toString());
         System.out.println(jsobjcet.toString());
         out.close();

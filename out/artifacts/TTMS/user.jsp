@@ -30,7 +30,7 @@
         <div class="signState col-md-3">
             <i class="fa fa-user-circle"></i>
             <a href="#">管理员 |</a>
-            <a href="login.jsp">登出</a>
+            <a href="index.jsp">登出</a>
         </div>
     </div>
 </div>

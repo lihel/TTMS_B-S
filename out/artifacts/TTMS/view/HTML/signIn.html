@@ -35,7 +35,7 @@
 <script>
     function login() {
         let url = "Login";
-        let req = new XMLHttpRequest();
+        var req = new XMLHttpRequest();
         if (window.XMLHttpRequest) {
             req = new XMLHttpRequest();
         }
@@ -46,19 +46,21 @@
         let userNo = document.getElementById("userNo").value;
         let pass = document.getElementById("password").value;
         let loginError = document.getElementById("errorLogin").value;
-        if (userNo == "" || pass == "") {
+       /* if (userNo == "" || pass == "") {
             loginError.innerHTML = "请输入用户名和密码";
             return false;
         } else {
             loginError.innerText = "";
-        }
+        }*/
         if (req) {
             req.open("post", url);
             //POST方式，必须加入如下头信息设定
             req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             req.onreadystatechange = () => {
+                alert("aaaaaa");
+
                 if (req.readyState == 4 && req.status == 200) {
-                    console.log("hdfusdifhisaudfh");
+                    alert("hdfusdifhisaudfh");
                     var json = eval("(" + req.responseText + ")");
                     //json = JSON.parse(xmlhttp.responseText);
                     if (json.state == false) {

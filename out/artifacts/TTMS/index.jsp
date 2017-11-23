@@ -1,47 +1,44 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<%@ page pageEncoding="UTF-8" isErrorPage="false" errorPage="error.jsp" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+%>
 <html>
 <head>
-<%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page import="java.sql.Connection" %>
-<%@ page import="java.sql.PreparedStatement" %>
-<%@ page import="java.sql.ResultSet" %>
-<%@ page import="com.mypackage.ConnectionManager" %>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>在此处插入标题</title>
-</head>
-<body style="font-size:25pt">
-<%
+    <title>TTMS</title>
+    <base href="<%=basePath%>">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <link rel="stylesheet" href="view/CSS/bs.css">
+    <link rel="stylesheet" href="view/CSS/index.css">
 
-Connection con = ConnectionManager.getInstance().getConnection();
-PreparedStatement pstmt = null;
-ResultSet rs = null;
-try
-{
-    // 获取所有用户数据
-    pstmt = con.prepareStatement("select * from employee");
-    rs = pstmt.executeQuery();
-    String result;
-    while (rs.next())
-    {
-        result = "";
-        result += rs.getInt("emp_id") + " ";
-        result += rs.getString("emp_no") + " ";
-        result += rs.getString("emp_name") + " ";
-        result += rs.getString("emp_tel_num") + " ";
-        result += rs.getString("emp_addr") + " ";
-        result += rs.getString("emp_email")+ "<br>";
-        System.out.println(result);
-    }
-}
-catch (Exception e)
-{
-    e.printStackTrace();
-}
-finally
-{
-    ConnectionManager.close(rs, pstmt, con);
-}
-%>
-<h1>首页</h1>
+</head>
+<body>
+<div class="container">
+    <div class="panel panel-primary sign">
+
+        <h3 class="text-center">欢迎登陆TTMS</h3>
+
+        <form action="Login" method="post">
+
+            <div class="text-center">
+                用户名：<input type="text" name="name" id="user" pattern="[0-9]{3}" oninvalid="setCustomValidity('请输入合法的用户名！')" oninput="setCustomValidity()" required="required"/>
+            </div>
+
+            <div class="text-center pass">
+                密　码：<input type="password" name="pass" id="password" required="required"/>
+            </div>
+            <div class="text-center signbutt">
+                <button type="submit" class="btn btn-primary btn-block">登陆</button>
+            </div>
+        </form>
+
+    </div>
+    <br/>
+    <div style="color:red" id="errorLogin">${desc}</div>
+</div>
+
 </body>
 </html>
