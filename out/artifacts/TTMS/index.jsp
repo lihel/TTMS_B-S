@@ -24,7 +24,7 @@
         <form action="Login" method="post">
 
             <div class="text-center">
-                用户名：<input type="text" name="name" id="user" pattern="[0-9]{3}" oninvalid="setCustomValidity('请输入合法的用户名！')" oninput="setCustomValidity()" required="required"/>
+                用户名：<input type="text" name="name" id="user" pattern="[0-9]{6}" oninvalid="setCustomValidity('请输入合法的用户名！')" oninput="setCustomValidity()" required="required"/>
             </div>
 
             <div class="text-center pass">
