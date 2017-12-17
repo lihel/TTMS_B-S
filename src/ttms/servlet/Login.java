@@ -40,17 +40,6 @@ public class Login extends HttpServlet {
         UserSrv userSrv = new UserSrv();
         User user = userSrv.findUserByNo(name).get(0);
 
-/*
-        List userList = new ArrayList<User>();
-        userList = userSrv.findUserByNo(name);
-
-        System.out.println(userList);
-
-        int size = userList.size();
-        for (int i = 0; i < size; i++) {
-            //从list获取数据可以通过get方法
-            System.out.println(i + "-----------" + userList.get(i));
-        }*/
         response.setCharacterEncoding("UTF-8");
         JsonObject jsobjcet = new JsonObject();
 
@@ -66,7 +55,6 @@ public class Login extends HttpServlet {
             jsobjcet.addProperty("name", name);
             jsobjcet.addProperty("pass", pass);
             jsobjcet.addProperty("state", true);
-            jsobjcet.addProperty("href", "localhost:8000/TTMS/view/HTML/studio.html");
             page = "user.jsp";
         } else if (user.getEmp_type() == 0 && user.getEmp_no().equals(name) && user.getEmp_pass().equals(pass)) {
             request.setAttribute("name", name);
@@ -80,7 +68,7 @@ public class Login extends HttpServlet {
 //        PrintWriter out = response.getWriter();
         Writer out = response.getWriter();
         response.getWriter().write(jsobjcet.toString());
-        System.out.println(response.toString());
+//        System.out.println(response.toString());
         request.getRequestDispatcher(page).forward(request, response);
 //        out.write(jsobjcet.toString());
 

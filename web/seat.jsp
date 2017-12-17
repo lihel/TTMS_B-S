@@ -27,14 +27,7 @@
 <script src="view/JS/bootstrap.min.js"></script>
 
 <div class="header">
-    <div class="row">
-        <div class="font col-md-9">TTMS</div>
-        <div class="signState col-md-3">
-            <i class="fa fa-user-circle"></i>
-            <a href="#">管理员 |</a>
-            <a href="index.jsp">登出</a>
-        </div>
-    </div>
+    <jsp:include page="head.jsp"></jsp:include>
 </div>
 
 <br>
