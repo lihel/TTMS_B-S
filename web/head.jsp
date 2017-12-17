@@ -27,7 +27,7 @@
             <div class="container-fluid">
                 <ul class="nav nav-tabs" id="navbar">
 
-                    <li class="nav navbar-nav navbar-right" id="logout"><a href="TTMS/index.jsp"><span><i class="fa fa-sign-out"
+                    <li class="nav navbar-nav navbar-right" id="logout"><a href="/TTMS/index.jsp"><span><i class="fa fa-sign-out"
                                                                                                 aria-hidden="true"></i></span>退出登录</a>
                     </li>
                     <li class="nav navbar-nav navbar-right" id="user"></li>
