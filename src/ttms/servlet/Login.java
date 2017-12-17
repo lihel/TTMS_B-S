@@ -52,9 +52,9 @@ public class Login extends HttpServlet {
             request.setAttribute("name", name);
             request.getSession().setAttribute("login", "ok");
             request.getSession().setAttribute("admin", "ok");
-            jsobjcet.addProperty("name", name);
+           /* jsobjcet.addProperty("name", name);
             jsobjcet.addProperty("pass", pass);
-            jsobjcet.addProperty("state", true);
+            jsobjcet.addProperty("state", true);*/
             page = "user.jsp";
         } else if (user.getEmp_type() == 0 && user.getEmp_no().equals(name) && user.getEmp_pass().equals(pass)) {
             request.setAttribute("name", name);
@@ -67,10 +67,9 @@ public class Login extends HttpServlet {
 
 //        PrintWriter out = response.getWriter();
         Writer out = response.getWriter();
-        response.getWriter().write(jsobjcet.toString());
-//        System.out.println(response.toString());
+//        response.getWriter().write(jsobjcet.toString());
+//        System.out.println(jsobjcet.toString());
         request.getRequestDispatcher(page).forward(request, response);
-//        out.write(jsobjcet.toString());
 
         out.close();
     }

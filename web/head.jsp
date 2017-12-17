@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="view/CSS/bs.css">
     <link rel="stylesheet" href="view/CSS/index.css">
     <link href="view/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script src="view/JS/userInfo.js"></script>
+    <script src="view/JS/jquery.min.js"></script>
+    <script src="view/JS/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="row">
@@ -26,12 +27,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
                 <ul class="nav nav-tabs" id="navbar">
-
-                    <li class="nav navbar-nav navbar-right" id="logout"><a href="/TTMS/index.jsp"><span><i class="fa fa-sign-out"
-                                                                                                aria-hidden="true"></i></span>退出登录</a>
-                    </li>
-                    <li class="nav navbar-nav navbar-right" id="user"></li>
-                    <li class="nav navbar-nav navbar-right" id="name"></li>
+                    <li class="nav navbar-nav navbar-right" id="logout"><a href="/TTMS/index.jsp"><span><i class="fa fa-sign-out" aria-hidden="true"></i></span>退出登录</a></li>
                 </ul>
 
             </div>
