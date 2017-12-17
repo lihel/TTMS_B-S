@@ -15,6 +15,14 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>ttms.servlet.Login</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>userInfo</servlet-name>
+        <servlet-class>ttms.servlet.userInfo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userInfo</servlet-name>
+        <url-pattern>/userInfo/*</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login/*</url-pattern>

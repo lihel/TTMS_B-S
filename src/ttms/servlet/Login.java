@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.*;
 
 import com.google.gson.JsonObject;
+import ttms.idao.DAOFactory;
+import ttms.model.Employee;
 import ttms.model.User;
 import ttms.service.UserSrv;
 
@@ -39,6 +41,8 @@ public class Login extends HttpServlet {
         String page = "index.jsp";
         UserSrv userSrv = new UserSrv();
         User user = userSrv.findUserByNo(name).get(0);
+        request.getSession().invalidate();
+        ArrayList<Employee> emp = DAOFactory.creatEmployeeDAO().findEmployeeByName(name);
 
         response.setCharacterEncoding("UTF-8");
         JsonObject jsobjcet = new JsonObject();
@@ -52,25 +56,30 @@ public class Login extends HttpServlet {
             request.setAttribute("name", name);
             request.getSession().setAttribute("login", "ok");
             request.getSession().setAttribute("admin", "ok");
-           /* jsobjcet.addProperty("name", name);
-            jsobjcet.addProperty("pass", pass);
-            jsobjcet.addProperty("state", true);*/
+            result = "管理员登陆成功";
+            jsobjcet.addProperty("info", result);
+            jsobjcet.addProperty("state", true);
+            jsobjcet.addProperty("type", 1);
             page = "user.jsp";
         } else if (user.getEmp_type() == 0 && user.getEmp_no().equals(name) && user.getEmp_pass().equals(pass)) {
             request.setAttribute("name", name);
             request.getSession().setAttribute("login", "ok");
             request.getSession().setAttribute("manager", "ok");
+            result = "普通用户登陆成功";
+            jsobjcet.addProperty("info", result);
+            jsobjcet.addProperty("state", true);
+            jsobjcet.addProperty("type", 0);
             page = "studio.jsp";
         } else {
             request.setAttribute("desc", result);
         }
 
-//        PrintWriter out = response.getWriter();
         Writer out = response.getWriter();
 //        response.getWriter().write(jsobjcet.toString());
-//        System.out.println(jsobjcet.toString());
+        System.out.println(jsobjcet.toString());
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write(jsobjcet.toString());
         request.getRequestDispatcher(page).forward(request, response);
-
         out.close();
     }
 
