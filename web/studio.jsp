@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String path = request.getContextPath();
-    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
 <html>
 <head>
@@ -46,11 +46,7 @@
 
     <div class="row">
         <div class="col-md-3">
-            <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="studio.jsp">演出厅管理</a></li>
-                <li><a href="user.jsp">用户管理</a></li>
-                <li><a href="seat.jsp">座位管理</a></li>
-            </ul>
+            <jsp:include page="/nav.jsp"></jsp:include>
         </div>
 
         <div class="col-md-9">

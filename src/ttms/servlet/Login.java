@@ -1,5 +1,6 @@
 package ttms.servlet;
 
+import java.io.*;
 import java.io.PrintWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -55,7 +56,7 @@ public class Login extends HttpServlet {
 
         if (name.equals("") || pass.equals("")) {
             result = "用户名或密码不能为空";
-          //  request.setAttribute("desc", result);
+            //  request.setAttribute("desc", result);
             jsobjcet.addProperty("info", result);
             jsobjcet.addProperty("state", false);
         } else if (user.getEmp_type() == 1 && user.getEmp_no().equals(name) && user.getEmp_pass().equals(pass)) {
@@ -76,10 +77,13 @@ public class Login extends HttpServlet {
             request.setAttribute("desc", result);
         }
 
-        PrintWriter out = response.getWriter();
+//        PrintWriter out = response.getWriter();
+        Writer out = response.getWriter();
+        response.getWriter().write(jsobjcet.toString());
+        System.out.println(response.toString());
         request.getRequestDispatcher(page).forward(request, response);
-        //out.write(jsobjcet.toString());
-        System.out.println(jsobjcet.toString());
+//        out.write(jsobjcet.toString());
+
         out.close();
     }
 

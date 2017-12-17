@@ -42,17 +42,14 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-3">
-
+            <jsp:include page="/nav.jsp"></jsp:include>
             <ul class="nav nav-pills nav-stacked">
-                <li><a href="studio.jsp">演出厅管理</a></li>
-                <li><a href="user.jsp">用户管理</a></li>
-                <li class="dropdown-submenu"><a href="seat.jsp">座位管理</a>
-                    <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a>1号厅</a></li>
-                        <li><a>2号厅</a></li>
-                        <li><a>3号厅</a></li>
-                        <li><a>4号厅</a></li>
-                    </ul>
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a>1号厅</a></li>
+                    <li><a>2号厅</a></li>
+                    <li><a>3号厅</a></li>
+                    <li><a>4号厅</a></li>
+                </ul>
                 </li>
             </ul>
         </div>
