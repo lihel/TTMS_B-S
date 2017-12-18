@@ -2,7 +2,7 @@
  * Created by lmy on 17-12-17.
  */
 'use strict';
-function get_user_message(url) {
+function get_user_message() {
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
@@ -17,7 +17,7 @@ function get_user_message(url) {
                 }
                 top.appendChild(head);
             }else{
-                window.location.href = '/login.html?url='+url;
+                window.location.href = '/index.jsp';
             }
             let name = document.getElementById("name");
             let nameA = document.createElement("a");
@@ -26,6 +26,6 @@ function get_user_message(url) {
             name.appendChild(nameA);
         }
     };
-    xmlhttp.open('GET','/TTMS/userInfo');
+    xmlhttp.open('GET','/userInfo');
     xmlhttp.send();
 }
