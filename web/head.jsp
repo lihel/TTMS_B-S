@@ -39,7 +39,7 @@
     </div>
 </div>
 <script>
-    get_user_message('/head.html');
+    get_user_message('/head.jsp');
 </script>
 </body>
 </html>

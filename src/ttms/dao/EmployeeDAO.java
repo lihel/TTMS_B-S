@@ -227,4 +227,43 @@ public class EmployeeDAO implements IEmployee {
         }
     }
 
+    public Employee findEmployeeByNo(String emp_no)
+    {
+        Employee info = null;
+        if(emp_no == null || emp_no.equals(""))
+            return info;
+
+        Connection con = ConnectionManager.getInstance().getConnection();
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try
+        {
+            // 获取所有用户数据
+            pstmt = con.prepareStatement("select * from employee where emp_no=?");
+            pstmt.setString(1, emp_no);
+            rs = pstmt.executeQuery();
+            if(rs.next())
+            {
+                // 如果有值的话再实例化
+                info = new Employee();
+                info.setEmp_id(rs.getInt("emp_id"));
+                info.setEmp_no(rs.getString("emp_no"));
+                info.setEmp_name(rs.getString("emp_name"));
+                info.setEmp_tel_num(rs.getString("emp_tel_num"));
+                info.setEmp_addr(rs.getString("emp_addr"));
+                info.setEmp_email(rs.getString("emp_email"));
+            }
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            ConnectionManager.close(rs, pstmt, con);
+            return info;
+        }
+    }
+
+
 }

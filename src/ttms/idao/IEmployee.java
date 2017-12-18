@@ -29,4 +29,7 @@ public interface IEmployee
 
     // 根据用户id查(一般用于数据内部关联操作)
     public Employee findEmployeeById(int employeeId);
+
+    public Employee findEmployeeByNo(String employeeNo);
+
 }

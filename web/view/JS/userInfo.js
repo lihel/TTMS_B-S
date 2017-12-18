@@ -26,6 +26,6 @@ function get_user_message(url) {
             name.appendChild(nameA);
         }
     };
-    xmlhttp.open('GET','/userInfo');
+    xmlhttp.open('GET','/TTMS/userInfo');
     xmlhttp.send();
 }

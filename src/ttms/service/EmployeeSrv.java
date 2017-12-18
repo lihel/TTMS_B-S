@@ -30,12 +30,16 @@ public class EmployeeSrv {
         return empDAO.findEmployeeAll();
     }
 
-    public ArrayList<Employee> findEmployeeByName(String employeeName){
+    public ArrayList<Employee> findEmployeeByName(String employeeName) {
         return empDAO.findEmployeeByName(employeeName);
     }
 
-    public Employee findEmployeeById(int employeeId){
+    public Employee findEmployeeById(int employeeId) {
         return empDAO.findEmployeeById(employeeId);
+    }
+
+    public Employee findEmployeeByNo(String employeeNo) {
+        return empDAO.findEmployeeByNo(employeeNo);
     }
 
 }

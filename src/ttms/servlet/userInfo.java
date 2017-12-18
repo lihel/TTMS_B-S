@@ -1,8 +1,11 @@
 package ttms.servlet;
 
 import com.google.gson.JsonObject;
+import ttms.model.Employee;
+import ttms.service.EmployeeSrv;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +15,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Created by lmy on 17-12-17.
  */
+@WebServlet(name = "userInfo", urlPatterns = "/TTMS/userInfo")
 public class userInfo extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
@@ -20,6 +24,9 @@ public class userInfo extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/json;charset=utf-8");
         HttpSession session = request.getSession(false);
+        EmployeeSrv empsrv = new EmployeeSrv();
+        Employee employee = empsrv.findEmployeeByNo(session.getAttribute("name").toString());
+
         JsonObject obj = new JsonObject();
         if (session == null) {
             obj.addProperty("login", false);
