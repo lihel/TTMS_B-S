@@ -29,7 +29,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
                 <ul class="nav nav-tabs" id="navbar">
-                    <li class="nav navbar-nav navbar-right" id="logout"><a href="/TTMS/index.jsp"><span><i
+                    <li class="nav navbar-nav navbar-right" id="logout"><a href="/index.jsp"><span><i
                             class="fa fa-sign-out" aria-hidden="true"></i></span>退出登录</a></li>
                     <li class="nav navbar-nav navbar-right" id="user"></li>
                     <li class="nav navbar-nav navbar-right" id="name"></li>
@@ -38,8 +38,6 @@
         </nav>
     </div>
 </div>
-<script>
-    get_user_message();
-</script>
+
 </body>
 </html>

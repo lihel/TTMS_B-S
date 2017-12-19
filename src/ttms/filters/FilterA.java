@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
-//@WebFilter("/user.jsp")
+@WebFilter("/user.jsp")
 public class FilterA implements Filter
 {
     public FilterA()

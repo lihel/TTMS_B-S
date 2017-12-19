@@ -26,6 +26,6 @@ function get_user_message() {
             name.appendChild(nameA);
         }
     };
-    xmlhttp.open('GET','/userInfo');
+    xmlhttp.open('GET','');
     xmlhttp.send();
 }
