@@ -18,16 +18,16 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="expires" content="0">
-    <link rel="stylesheet" href="view/CSS/bs.css">
-    <link rel="stylesheet" href="view/CSS/index.css">
-    <link href="view/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/view/CSS/bs.css">
+    <link rel="stylesheet" href="/view/CSS/index.css">
+    <link href="/view/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-<script src="view/JS/jquery.min.js"></script>
-<script src="view/JS/bootstrap.min.js"></script>
+<script src="/view/JS/jquery.min.js"></script>
+<script src="/view/JS/bootstrap.min.js"></script>
 
 <div class="header">
-    <jsp:include page="head.jsp"></jsp:include>
+    <jsp:include page="/head.jsp"></jsp:include>
 </div>
 
 <br>
@@ -77,11 +77,11 @@
     </div>
 
 
-    <script src="view/JS/jquery.min.js"></script>
+    <script src="/view/JS/jquery.min.js"></script>
 
-    <script type="text/javascript" src="view/JS/jquery.seat-charts.min.js"></script>
+    <script type="text/javascript" src="/view/JS/jquery.seat-charts.min.js"></script>
 
-    <script type="text/javascript" src="view/JS/seatStatus.js"></script>
+    <script type="text/javascript" src="/view/JS/seatStatus.js"></script>
 
 </div>
 </body>
