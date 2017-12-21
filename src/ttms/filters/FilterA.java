@@ -27,9 +27,9 @@ public class FilterA implements Filter
     {
         System.out.println("进入过滤器FilterA");
         HttpServletRequest req = (HttpServletRequest) request;
-        String flag = (String) req.getSession().getAttribute("admin");
+        int flag = (int) req.getSession().getAttribute("type");
         System.out.println(flag);
-        if (flag == null || !flag.equals("ok"))
+        if (flag==0)
         {
             System.out.println("无权访问用户管理");
             request.setAttribute("desc", "无权访问用户管理");
