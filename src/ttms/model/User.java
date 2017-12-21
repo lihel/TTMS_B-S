@@ -8,6 +8,7 @@ public class User {
     private String emp_pass;
     private int type;
     private String head_path;
+    private Employee emp;
 
     public String getEmp_no() {
         return emp_no;
@@ -19,6 +20,14 @@ public class User {
 
     public String getEmp_pass() {
         return emp_pass;
+    }
+
+    public void setEmp(Employee emp) {
+        this.emp = emp;
+    }
+
+    public Employee getEmp(Employee emp) {
+        return emp;
     }
 
     public void setEmp_pass(String emp_pass) {
