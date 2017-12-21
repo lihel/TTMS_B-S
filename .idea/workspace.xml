@@ -6,12 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd2eccd5-d6ad-41f5-9bc2-9237bcec1b24" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/TTMS/WEB-INF/classes/ttms/filters/FilterA.class" afterPath="$PROJECT_DIR$/out/artifacts/TTMS/WEB-INF/classes/ttms/filters/FilterA.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/ttms/filters/FilterA.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/ttms/filters/FilterA.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ttms/filters/FilterA.java" afterPath="$PROJECT_DIR$/src/ttms/filters/FilterA.java" />
-    </list>
+    <list default="true" id="cd2eccd5-d6ad-41f5-9bc2-9237bcec1b24" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -148,8 +143,8 @@
       <file leaf-file-name="FilterA.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ttms/filters/FilterA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+            <state relative-caret-position="160">
+              <caret line="29" column="56" lean-forward="false" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -1185,12 +1180,12 @@
       <workItem from="1513653869602" duration="534000" />
       <workItem from="1513681993396" duration="7436000" />
       <workItem from="1513757585902" duration="98000" />
-      <workItem from="1513834410019" duration="5966000" />
+      <workItem from="1513834410019" duration="7781000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203623000" />
+    <option name="totallyTimeSpent" value="205438000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1531,14 +1526,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ttms/filters/FilterA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ttms/dao/EmployeeDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -1552,6 +1539,14 @@
             <marker date="1513585456918" expanded="true" signature="6573:6610" ph="select * fro... employee" />
             <marker date="1513585456918" expanded="true" signature="7727:7764" ph="select * fro... employee" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ttms/filters/FilterA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="29" column="56" lean-forward="false" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
